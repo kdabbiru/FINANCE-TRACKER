@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from datetime import datetime
 import sqlite3
 from collections import defaultdict
-import os #  used for deployemnt (rener)
+import os
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -238,4 +238,4 @@ def statistics():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=int(os.environ.get("PORT", 10000))) # main for deploynemnt (render)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
